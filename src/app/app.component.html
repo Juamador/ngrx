@@ -1,12 +1,13 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
+            <b>Loading.... {{loading$ | async | json}}</b>
             <button class="btn btn-primary mb-3" (click)="SetSpanishMessage()">Cambiar a Español</button>
 
             <button class="btn btn-success mb-3" (click)="SetEnglishMessage()">Cambiar a Inglés</button>
         </div>
         <div class="card-body">
-            <p>{{ (dato$ | async).mensaje }}</p>
+            <app-user-list></app-user-list>
         </div>
     </div>
 </div>

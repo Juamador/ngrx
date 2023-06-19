@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        Usuarios
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Estatus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of Users$ | async">
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
