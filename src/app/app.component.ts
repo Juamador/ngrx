@@ -13,19 +13,14 @@ import { Person } from './models/person.model';
 })
 export class AppComponent implements OnInit{
   title = 'myApp';
-  dato$ : Observable<any>;
   loading$: Observable<boolean> = new Observable();
-  constructor(private store: Store<any>,
-              private personService: PersonService){
-     this.dato$ = store.select('mensaje');
+  constructor(private store: Store<any>){
+
   }
 
   ngOnInit(): void {
     this.loading$ = this.store.select(selectLoading);
     this.store.dispatch(loadPersonList());
-    this.personService.getUsersAPi().subscribe( (response: Person[])=> {
-      this.store.dispatch(loadedPersonList({persons: response}));
-    })  
   }
 
 
