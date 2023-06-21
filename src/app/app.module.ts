@@ -8,6 +8,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { personReducer } from './state/reducers/persons.reducers';
 import { ROOT_REDUCERS } from './app.state';
 import { UserListComponent } from './user-list/user-list.component';
+import { EffectsModule } from '@ngrx/effects';
+import { PersonEffects } from './state/effects/persons.effects';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { UserListComponent } from './user-list/user-list.component';
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({
       maxAge: 4
-    })
+    }),
+    EffectsModule.forRoot([PersonEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
