@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StoreModule} from '@ngrx/store';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { myReducer } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { personReducer } from './state/reducers/persons.reducers';
@@ -19,7 +20,7 @@ import { PersonEffects } from './state/effects/persons.effects';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    
+    HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({
       maxAge: 4
